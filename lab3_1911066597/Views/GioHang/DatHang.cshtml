@@ -1,0 +1,52 @@
+﻿@model IEnumerable<lab3_1911066597.Models.GioHang>
+
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DatHang</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soluong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soluong)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.maloai }) |
+            @Html.ActionLink("Details", "Details", new { id=item.maloai }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.maloai })
+        </td>
+    </tr>
+}
+
+</table>
